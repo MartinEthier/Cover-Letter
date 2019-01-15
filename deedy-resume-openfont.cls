@@ -9,7 +9,8 @@
 \LoadClass{article}
 
 % Package Imports
-\usepackage[hmargin=1.25cm, vmargin=0.7cm]{geometry}
+%\usepackage[hmargin=1.25cm, vmargin=0.7cm]{geometry}
+\usepackage[hmargin=1.7cm, vmargin=0.7cm]{geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
@@ -21,8 +22,8 @@
 % Color definitions
 \definecolor{date}{HTML}{666666} 
 \definecolor{primary}{HTML}{2b2b2b} 
-\definecolor{headings}{HTML}{6A6A6A}
-\definecolor{subheadings}{HTML}{333333}
+\definecolor{headings}{HTML}{8B0000}
+\definecolor{subheadings}{HTML}{2b2b2b}
 
 % Set main fonts
 \defaultfontfeatures{Mapping=tex-text}
@@ -42,15 +43,17 @@ Last Updated on
 
 % Name command
 \newcommand{\namesection}[3]{
-	\centering{
-		\sffamily
-		\fontspec[Path = fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
-		\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
-	} \\
-	\vspace{5pt}
-	\centering{ \color{headings}\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
-	\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
-	\vspace{-15pt}
+\centering{
+\color{headings}
+\fontsize{40pt}{60pt}
+\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
+\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
+} \\[5pt]
+\centering{
+\color{primary}
+\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
+\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
+\vspace{-15pt}
 }
 \titlespacing{\section}{0pt}{0pt}{0pt}
 
@@ -59,7 +62,7 @@ Last Updated on
 \scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{} {0em}{}
 
 % Subeadings command
-\titleformat{\subsection}{\color{subheadings}
+\titleformat{\subsection}{\color{headings}
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\raggedright\bfseries\uppercase}{}{0em}{}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
@@ -67,10 +70,10 @@ Last Updated on
 \fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
 % Descriptors command
-\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\descript}[1]{\color{headings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
-\newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\newcommand{\location}[1]{\color{subheadings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
 
 % Section seperators command
 \newcommand{\sectionsep}[0]{\vspace{8pt}}
